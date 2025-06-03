@@ -2,11 +2,13 @@
 using Core.Models;
 using Infrastructure.Data;
 using Infrastructure.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace FiapCloudGamesAPI.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class GamesController : ControllerBase
@@ -33,6 +35,7 @@ namespace FiapCloudGamesAPI.Controllers
             return Ok(game);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<ActionResult<Game>> Create(Game game)
         {
@@ -40,6 +43,7 @@ namespace FiapCloudGamesAPI.Controllers
             return CreatedAtAction(nameof(GetById), new { id = game.Id }, game);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, Game game)
         {
@@ -52,6 +56,7 @@ namespace FiapCloudGamesAPI.Controllers
             return NoContent();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {

@@ -10,6 +10,8 @@ namespace Core.Interface
         Task UpdateAsync(User user);
         Task DeleteAsync(User user);
         Task<bool> ExistsAsync(int id);
+        Task<User?> GetByEmailAsync(string email);
+
     }
 }
 

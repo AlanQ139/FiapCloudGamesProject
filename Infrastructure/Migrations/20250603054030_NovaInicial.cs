@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class NovaInicial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -34,11 +34,11 @@ namespace Infrastructure.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Senha = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Tipo = table.Column<int>(type: "int", nullable: false),
-                    DataDeCadastro = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Role = table.Column<int>(type: "int", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -49,15 +49,15 @@ namespace Infrastructure.Migrations
                 name: "UserGames",
                 columns: table => new
                 {
-                    BibliotecaId = table.Column<int>(type: "int", nullable: false),
+                    LibraryId = table.Column<int>(type: "int", nullable: false),
                     UsuariosId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UserGames", x => new { x.BibliotecaId, x.UsuariosId });
+                    table.PrimaryKey("PK_UserGames", x => new { x.LibraryId, x.UsuariosId });
                     table.ForeignKey(
-                        name: "FK_UserGames_Games_BibliotecaId",
-                        column: x => x.BibliotecaId,
+                        name: "FK_UserGames_Games_LibraryId",
+                        column: x => x.LibraryId,
                         principalTable: "Games",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);

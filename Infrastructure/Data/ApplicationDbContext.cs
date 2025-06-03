@@ -16,7 +16,7 @@ namespace Infrastructure.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>()
-                .HasMany(u => u.Biblioteca)
+                .HasMany(u => u.Library)
                 .WithMany(g => g.Usuarios)
                 .UsingEntity(j => j.ToTable("UserGames"));
         }

@@ -5,13 +5,19 @@
     public class User
     {
         public int Id { get; set; }
-        public string Nome { get; set; }
-        public string Email { get; set; }
-        public string Senha { get; set; }
-        public UserRole Tipo { get; set; }
-        public DateTime DataDeCadastro { get; set; } = DateTime.UtcNow;
 
-        public List<Game> Biblioteca { get; set; } = new List<Game>();
+        public string Name { get; set; } = string.Empty;
+
+        public string Email { get; set; } = string.Empty;
+
+        public string Password { get; set; } = string.Empty;
+
+        public UserRole Role { get; set; }
+
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+
+        public List<Game> Library { get; set; } = new List<Game>();
     }
+
 
 }

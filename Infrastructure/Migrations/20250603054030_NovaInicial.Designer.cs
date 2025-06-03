@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250603022042_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20250603054030_NovaInicial")]
+    partial class NovaInicial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -64,22 +64,22 @@ namespace Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("DataDeCadastro")
+                    b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Nome")
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Senha")
+                    b.Property<string>("Password")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Tipo")
+                    b.Property<int>("Role")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -89,13 +89,13 @@ namespace Infrastructure.Migrations
 
             modelBuilder.Entity("GameUser", b =>
                 {
-                    b.Property<int>("BibliotecaId")
+                    b.Property<int>("LibraryId")
                         .HasColumnType("int");
 
                     b.Property<int>("UsuariosId")
                         .HasColumnType("int");
 
-                    b.HasKey("BibliotecaId", "UsuariosId");
+                    b.HasKey("LibraryId", "UsuariosId");
 
                     b.HasIndex("UsuariosId");
 
@@ -106,7 +106,7 @@ namespace Infrastructure.Migrations
                 {
                     b.HasOne("Core.Models.Game", null)
                         .WithMany()
-                        .HasForeignKey("BibliotecaId")
+                        .HasForeignKey("LibraryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
