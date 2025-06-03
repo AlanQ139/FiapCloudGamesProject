@@ -1,4 +1,4 @@
-﻿namespace FiapCloudGamesAPI.Models
+﻿namespace Core.Models
 {
     public enum UserRole { Usuario, Administrador }
 

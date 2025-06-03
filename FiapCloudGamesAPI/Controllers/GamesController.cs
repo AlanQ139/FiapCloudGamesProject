@@ -1,7 +1,7 @@
-﻿using FiapCloudGamesAPI.Data;
-using FiapCloudGamesAPI.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Infrastructure.Data;
+using Core.Models;
 
 namespace FiapCloudGamesAPI.Controllers
 {

@@ -1,9 +1,9 @@
-﻿using FiapCloudGamesAPI.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Reflection.Emit;
+using Core.Models;
 
-namespace FiapCloudGamesAPI.Data
+namespace Infrastructure.Data
 {
     public class ApplicationDbContext : DbContext
     {
