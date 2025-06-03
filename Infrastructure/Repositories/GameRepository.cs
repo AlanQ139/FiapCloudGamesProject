@@ -32,18 +32,20 @@ namespace Infrastructure.Repositories
 
         public async Task UpdateAsync(Game game)
         {
-            _context.Games.Update(game);
+            _context.Entry(game).State = EntityState.Modified;
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteAsync(int id)
+        public async Task DeleteAsync(Game game)
         {
-            var game = await _context.Games.FindAsync(id);
-            if (game != null)
-            {
-                _context.Games.Remove(game);
-                await _context.SaveChangesAsync();
-            }
+            _context.Games.Remove(game);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task<bool> ExistsAsync(int id)
+        {
+            return await _context.Games.AnyAsync(g => g.Id == id);
         }
     }
+
 }

@@ -1,9 +1,4 @@
 ﻿using Core.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Core.Interface
 {
@@ -13,6 +8,8 @@ namespace Core.Interface
         Task<Game?> GetByIdAsync(int id);
         Task AddAsync(Game game);
         Task UpdateAsync(Game game);
-        Task DeleteAsync(int id);
+        Task DeleteAsync(Game game);
+        Task<bool> ExistsAsync(int id);
     }
+
 }
