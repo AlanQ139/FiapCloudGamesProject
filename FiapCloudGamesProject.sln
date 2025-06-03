@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{DBD3CF91-F5E8-4E0E-967B-A5665EDC473A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiapCloudGamesAPI.Tests", "FiapCloudGamesAPI.Tests\FiapCloudGamesAPI.Tests.csproj", "{8F389028-7BD0-4217-8433-C82505200713}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,9 +31,16 @@ Global
 		{DBD3CF91-F5E8-4E0E-967B-A5665EDC473A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBD3CF91-F5E8-4E0E-967B-A5665EDC473A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBD3CF91-F5E8-4E0E-967B-A5665EDC473A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F389028-7BD0-4217-8433-C82505200713}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F389028-7BD0-4217-8433-C82505200713}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F389028-7BD0-4217-8433-C82505200713}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F389028-7BD0-4217-8433-C82505200713}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8F389028-7BD0-4217-8433-C82505200713} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B2B8AFF5-71EE-4C91-9B54-A3532DF78FC0}

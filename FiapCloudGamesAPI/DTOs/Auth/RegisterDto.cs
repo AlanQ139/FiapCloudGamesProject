@@ -8,7 +8,7 @@ namespace FiapCloudGamesAPI.DTOs.Auth
         public string Name { get; set; } = string.Empty;
 
         [Required]
-        [EmailAddress]
+        [EmailAddress(ErrorMessage = "Email inválido.")]
         public string Email { get; set; } = string.Empty;
 
         [Required]
