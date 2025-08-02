@@ -44,6 +44,12 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 #endregion
 
 var app = builder.Build();
+//para aplicar as migrations na primeira vez que subir o container do Docker
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+    dbContext.Database.Migrate();
+}
 
 #region Swagger
 app.UseSwagger();
