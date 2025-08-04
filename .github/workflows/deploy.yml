@@ -25,7 +25,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
-          context: ./FiapCloudGamesAPI
-          file: ./FiapCloudGamesAPI/Dockerfile
+          context: .
+          file: ./Dockerfile
           push: true
           tags: alqueiroz/fiapcloudgames-api:latest
